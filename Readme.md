@@ -1,3 +1,3 @@
-RUN test
+### RUN test
 
 npm run tests
