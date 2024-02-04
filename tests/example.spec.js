@@ -1,19 +1,32 @@
 // @ts-check
-const { test, expect } = require('@playwright/test');
+import { test, expect } from '@playwright/test';
 
-test('has title', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
+test('Login as Standard User', async ({ page }) => {
+  await page.goto('https://www.saucedemo.com/');
 
-  // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/Playwright/);
+  // Enter user name
+  await page.getByPlaceholder("Username").fill("standard_user");
+
+  // Enter password
+  await page.getByPlaceholder("Password").fill("secret_sauce");
+
+  
+  // Click login button
+  await page.getByTestId("login-button").click();
+  
 });
 
-test('get started link', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
+test('Login as Visual User', async ({ page }) => {
+  await page.goto('https://www.saucedemo.com/');
 
-  // Click the get started link.
-  await page.getByRole('link', { name: 'Get started' }).click();
+  // Enter user name
+  await page.getByPlaceholder("Username").fill("visual_user");
 
-  // Expects the URL to contain intro.
-  await expect(page).toHaveURL(/.*intro/);
+  // Enter password
+  await page.getByPlaceholder("Password").fill("secret_sauce");
+
+  
+  // Click login button
+  await page.getByTestId("login-button").click();
+  
 });
