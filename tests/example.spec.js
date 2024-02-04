@@ -14,6 +14,8 @@ test('Login as Standard User', async ({ page }) => {
   // Click login button
   await page.getByTestId("login-button").click();
   
+  // Assertion after login
+  await expect(page.locator('#item_4_title_link')).toBeVisible();
 });
 
 test('Login as Visual User', async ({ page }) => {
@@ -28,5 +30,9 @@ test('Login as Visual User', async ({ page }) => {
   
   // Click login button
   await page.getByTestId("login-button").click();
+
+  // Assertion after login
+  await expect(page.locator('#item_4_title_link')).toBeVisible();
+
   
 });
