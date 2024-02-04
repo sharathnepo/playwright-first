@@ -1,3 +1,7 @@
-### RUN test
+### Run test headless
 
-npm run tests
+npx playwright test
+
+### Run test in UI mode
+
+npx playwright test ui
