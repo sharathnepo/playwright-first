@@ -13,7 +13,8 @@ import { defineConfig, devices } from '@playwright/test';
 export default defineConfig({
 
   use: {
-    testIdAttribute: 'data-test'
+    testIdAttribute: 'data-test',
+    trace: 'on'
   },
   testDir: './tests',
   /* Run tests in files in parallel */
