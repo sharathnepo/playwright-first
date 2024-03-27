@@ -5,3 +5,7 @@ node_modules/
 .idea
 
 playwright/.auth
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
